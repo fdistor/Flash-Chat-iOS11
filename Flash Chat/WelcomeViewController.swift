@@ -6,15 +6,20 @@
 //
 
 import UIKit
-
+import Firebase
 
 
 class WelcomeViewController: UIViewController {
 
    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-
+        FirebaseApp.configure()
+        
+        let myDatabase = Database.database().reference()
+        
+        myDatabase.setValue("We've got data")
     
     }
 
